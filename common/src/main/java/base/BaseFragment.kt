@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import util.LoadingViewUtil
 
 /**
  * 项目中所有fragment的基类*/
@@ -74,6 +75,7 @@ abstract class BaseFragment<T: ViewDataBinding> :Fragment(){
         Log.d(TAG,TAG+"showLoadingDialog:")
 
         //加载
+        LoadingViewUtil.showLoadingDialog(mContext,true)
     }
 
     //取消Dialog
@@ -81,6 +83,7 @@ abstract class BaseFragment<T: ViewDataBinding> :Fragment(){
         Log.d(TAG,TAG+"dismissLoadDialog:")
 
         //取消
+        LoadingViewUtil.dismissLoadingDialog()
     }
 
 }

@@ -11,6 +11,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import util.AppLogUtil
+import util.LoadingViewUtil
 
 /**
  * 项目中所有父类的基类
@@ -82,6 +84,7 @@ abstract class BaseActivity<T: ViewDataBinding>
         Log.d(TAG,TAG+"showLoadingDialog:")
 
         //加载
+        LoadingViewUtil.showLoadingDialog(this,true)
     }
 
     //取消Dialog
@@ -89,6 +92,7 @@ abstract class BaseActivity<T: ViewDataBinding>
         Log.d(TAG,TAG+"dismissLoadDialog:")
 
         //取消
+        LoadingViewUtil.dismissLoadingDialog()
     }
 
 
