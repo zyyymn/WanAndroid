@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import base.BaseViewModel
 import com.example.user.Bean.LoginBean
 import com.example.user.repo.LoginRepo
+import network.RespStateData
 
 
 /**
@@ -13,9 +14,14 @@ import com.example.user.repo.LoginRepo
 class LoginViewModel(private val repo: LoginRepo)
     :BaseViewModel(){
 
-        var loginData = MutableLiveData<LoginBean>()
+        var loginData = RespStateData<LoginBean>()
 
     fun login(username:String,password:String){
+        launch(
+            block = {
+                repo.login(username,password,loginData)
+            }
+        )
 
     }
 

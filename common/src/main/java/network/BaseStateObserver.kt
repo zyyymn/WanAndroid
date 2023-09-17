@@ -4,7 +4,7 @@ import android.database.Observable
 import android.util.Log
 import androidx.lifecycle.Observer
 
-open class BaseStateObserver<T>(var t: Boolean):
+open class BaseStateObserver<T>(var t: Boolean?):
     Observer<BaseResp<T>> {
 
     private val TAG = "BaseStateObserver"
