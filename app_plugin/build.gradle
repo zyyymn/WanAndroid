@@ -1,25 +1,21 @@
-
-
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-
+    id 'maven-publish'
 }
 
 
 
 android {
-    namespace 'com.example.wanandroid'
+    namespace 'com.example.app_plugin'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.wanandroid"
         minSdk 31
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -47,12 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
-    implementation project(path: ':common')
-    implementation project(path: ':me')
-    implementation project(path: ':user')
-    implementation "com.tencent:mmkv:1.2.10"
-    //ARouter
-    implementation "com.alibaba:arouter-api:1.5.2"
-    //koin with mavenCentral
-    implementation "io.insert-koin:koin-android:3.4.1"
+    implementation 'com.android.tools.build:gradle:7.4.2'
+    implementation 'org.ow2.asm:asm:9.2'
+    implementation 'org.ow2.asm:asm-commons:9.2'
 }

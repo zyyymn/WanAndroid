@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data>
+
+    </data>
+
+    <widget.MySwipeRefreshLayouc
+        android:id="@+id/srl_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.home.widget.NSParentLayout2
+            android:id="@+id/ns2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blacke">
+
+            <com.zhpan.bannerview.BannerViewPager
+                android:id="@+id/top_view"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bottom_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.example.home.widget.NSParentLayout2>
+    </widget.MySwipeRefreshLayouc>
+
+</layout>
