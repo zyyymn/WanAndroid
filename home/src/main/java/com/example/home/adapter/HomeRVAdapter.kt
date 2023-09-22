@@ -117,16 +117,16 @@ class HomeRVAdapter(var listener: HomeItemClickListener)
     }
 
     inner class MyFootHolder(item: View):RecyclerView.ViewHolder(item)
-    inner class MyLastHolder(item: View): RecyclerView.ViewHolder(Item)
+    inner class MyLastHolder(item: View): RecyclerView.ViewHolder(item)
 
     //还未实现
     inner class  MyCallback: DiffUtil.ItemCallback<a>(){
         override fun areItemsTheSame(oldItem: a, newItem: a): Boolean {
-
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(oldItem: a, newItem: a): Boolean {
-            TODO("Not yet implemented")
+            return oldItem.title == newItem.title && oldItem.niceDate == newItem.niceDate
         }
 
     }
