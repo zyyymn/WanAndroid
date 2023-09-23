@@ -1,12 +1,13 @@
 package com.example.project.bean
 
+typealias p = Project.ProjectDetail
 data class Project(
     val datas: List<ProjectDetail>,
     var over: Boolean,
     val curPage: Int
 ) {
     data class ProjectDetail(
-        val id: Int,
+        var id: Int,
         val author: String,
         val link: String,
         val desc: String,
